@@ -72,6 +72,8 @@ public class ColorChooserThatDoesntLikeGreen : ReactiveObject
 }
 ```
 
+Do a thing
+
 ## Learn more
 
 For more information on how to use ReactiveUI, check out
