@@ -23,7 +23,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>Bin\Debug\WP8\</OutputPath>
+    <OutputPath>Bin\Debug\</OutputPath>
     <IntermediateOutputPath>obj\Debug\WP8</IntermediateOutputPath>
     <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WP8;XAML</DefineConstants>
     <NoStdLib>true</NoStdLib>
@@ -43,34 +43,40 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>Bin\Release\WP8\ReactiveUI.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;WP8;SILVERLIGHT;</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib.Extensions" />
-    <Reference Include="Splat">
-      <HintPath>..\packages\Splat.1.3.1\lib\wp8\Splat.dll</HintPath>
+    <Reference Include="Splat, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Splat.1.3.3\lib\wp8\Splat.dll</HintPath>
     </Reference>
     <Reference Include="System.Observable" />
-    <Reference Include="System.Reactive.Core, Version=2.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Rx-Core.2.2.4\lib\windowsphone8\System.Reactive.Core.dll</HintPath>
+      <HintPath>..\..\..\packages\Rx-Core.2.2.5\lib\windowsphone8\System.Reactive.Core.dll</HintPath>
     </Reference>
-    <Reference Include="System.Reactive.Interfaces, Version=2.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Rx-Interfaces.2.2.4\lib\windowsphone8\System.Reactive.Interfaces.dll</HintPath>
+      <HintPath>..\..\..\packages\Rx-Interfaces.2.2.5\lib\windowsphone8\System.Reactive.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="System.Reactive.Linq, Version=2.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Rx-Linq.2.2.4\lib\windowsphone8\System.Reactive.Linq.dll</HintPath>
+      <HintPath>..\..\..\packages\Rx-Linq.2.2.5\lib\windowsphone8\System.Reactive.Linq.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Reactive.PlatformServices, Version=2.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Rx-PlatformServices.2.2.4\lib\windowsphone8\System.Reactive.PlatformServices.dll</HintPath>
+      <HintPath>..\..\..\packages\Rx-PlatformServices.2.2.5\lib\windowsphone8\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive.Windows.Threading, Version=2.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Rx-XAML.2.2.4\lib\windowsphone8\System.Reactive.Windows.Threading.dll</HintPath>
+      <HintPath>..\..\..\packages\Rx-XAML.2.2.4\lib\windowsphone8\System.Reactive.Windows.Threading.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive.WindowsRuntime">
-      <HintPath>..\packages\Rx-WinRT.2.2.4\lib\windowsphone8\System.Reactive.WindowsRuntime.dll</HintPath>
+      <HintPath>..\..\..\packages\Rx-WinRT.2.2.4\lib\windowsphone8\System.Reactive.WindowsRuntime.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows" />
     <Reference Include="system" />
@@ -154,7 +160,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.ReactiveUI_WP8.config" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
